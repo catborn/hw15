@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+  </head>
+
+  <body>
+    <h2>Температура в разных городах</h2>
+
+    <div id="resultTemperature"></div>
+    <div id="resultTemperature1"></div>
+    <div id="resultTemperature2"></div>
+    <div id="resultTemperature3"></div>
+
+    <p id="maxTemp"></p>
+    <p id="minTemp"></p>
+
+    <script>
+      //элемент для вывода массива температур
+      const resultTemperature = document.querySelector("#resultTemperature");
+      const resultTemperature1 = document.querySelector("#resultTemperature1");
+      const resultTemperature2 = document.querySelector("#resultTemperature2");
+      const resultTemperature3 = document.querySelector("#resultTemperature3");
+
+      //элементы для вывода макс и мин температуры
+      const maxTemp = document.querySelector("#maxTemp");
+      const minTemp = document.querySelector("#minTemp");
+
+      // массив городов
+      const cities = ["Москва", "Санкт-Петербург", "Нью-Йорк", "Токио"];
+      const temperature = [];
+      // Сбор температуры
+      for (let i = 0; i < cities.length; i++) {
+        let temper = prompt(`Введите температуру для города ${cities[i]}`);
+        temperature.push(Number(temper));
+      }
+      // console.log(temperature);
+
+      // вывод через  массив
+      for (let i = 0; i < cities.length; i++) {
+        const citie = cities[i];
+        const newCitieString = `Температура в городе ${citie}: ${temperature[i]}°C`;
+        cities[i] = newCitieString;
+        console.log(cities);
+        resultTemperature.textContent = cities[0];
+        resultTemperature1.textContent = cities[1];
+        resultTemperature2.textContent = cities[2];
+        resultTemperature3.textContent = cities[3];
+      }
+
+      maxTemp.textContent = `Максимальная температура: ${Math.max(
+        ...temperature
+      )}°C`;
+
+      minTemp.textContent = `Минимальная температура: ${Math.min(
+        ...temperature
+      )}°C`;
+    </script>
+  </body>
+</html>
