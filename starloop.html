@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star</title>
+  </head>
+  <body>
+    <script>
+      // создать пустой массив
+      const numbers = [];
+      // заполнить массив целыми числами
+      for (let i = -10; i <= 10; i += 1) {
+        numbers.push(i);
+      }
+      console.log(numbers);
+      // удалить отрицательные
+      const allNum = numbers.slice();
+      // console.log(allNum);
+      let numPlus = [];
+      for (let num of allNum) {
+        if (num > 0) {
+          numPlus.push(num);
+        }
+      }
+      console.log(numPlus);
+      // возвести в квадрат
+      let numSquare = [];
+      for (let num of numPlus) {
+        // console.log(num ** 2);
+        numSquare.push(num ** 2);
+      }
+      console.log(numSquare);
+      // отсортировать по убыванию
+      numSquare.sort((a, b) => b - a);
+      console.log(numSquare);
+    </script>
+  </body>
+</html>
